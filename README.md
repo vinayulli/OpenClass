@@ -8,12 +8,7 @@ Built for **Google AI Builder Cup 2026** by **Team OpenClass**. Team leader: **V
 
 **Application: [Open OpenClass](https://openclass-jdi6nfaqza-uc.a.run.app)**
 
-| Role | Email | Password |
-| --- | --- | --- |
-| Teacher | `teacher@openclass.demo` | `OpenClass123!` |
-| Student | `student@openclass.demo` | `OpenClass123!` |
-
-Additional student accounts are `student2@openclass.demo` through `student10@openclass.demo`, using the same demo password. These are shared synthetic demonstration accounts; use them only for demo activity.
+Use the teacher or student demo credentials provided separately by the team. The hosted demo contains synthetic classroom records.
 
 The classroom is **Machine Learning: from data to decisions (ML 201)**: ten learners with different strengths, evidence gaps and feedback, twenty syllabus topics, and fourteen topics taught (**70% teaching coverage**). Teaching coverage and student mastery are separate measures. See [Machine Learning demo data](mock_data/MACHINE_LEARNING.md).
 
@@ -69,7 +64,7 @@ flowchart TB
   Registry -.-> Github
 ```
 
-**Project:** `hackathon-506016` · **Region:** `us-central1` · **Cloud SQL:** `hackathon-506016:us-central1:openclass-postgres`.
+The application and managed services are deployed in Google Cloud. Project identifiers, database connection details and credentials are maintained in private deployment configuration.
 
 The public application is the entry point. Specialist invocation and MCP services remain protected. Agent Gateway governs attached Runtime egress; MCP servers run as separate Cloud Run services and are registered as destinations. The initial API-to-Runtime invocation uses native IAM, with signed execution grants providing additional application authorization.
 
@@ -170,7 +165,7 @@ For first-time setup, copy `.env.example` to `.env` **only if `.env` does not al
 ```powershell
 uv sync --extra cloud --python 3.12
 gcloud auth application-default login
-gcloud auth application-default set-quota-project hackathon-506016
+gcloud auth application-default set-quota-project YOUR_PROJECT_ID
 docker compose --profile cloud up -d cloud-sql-proxy
 uv run uvicorn backend.main:app --reload
 ```
@@ -295,8 +290,3 @@ The mastery calculation is an explainable confidence-weighted evidence mean, not
 
 The current release uses shared synthetic accounts and a single API instance with durable background workers; scaling requires reviewing worker placement, leases, database pools and process-local rate limits. For a real institution, provision individual identities, disable demo seeding, enforce appropriate retention and complete production acceptance checks. Disabling demo mode does not remove existing demo accounts.
 
-## Sharing this repository
-
-Share application source, dependency lockfiles, tests, mock fixtures, documentation and infrastructure templates. The **presentation/** folder is retained locally and excluded from Git, as are local environment files, credentials, private signing keys, Terraform state/plans, generated logs, caches, installed dependencies and build outputs. Terraform state is needed for ongoing deployment management and must be retained privately, outside the shared source history.
-
-Before the first push, review `git status --short` and the staged file list. Commit `.env.example` with placeholders rather than your local `.env`; do not force-add ignored deployment files. The live demo uses synthetic records, and the presentation folder is preserved for the organizers.
