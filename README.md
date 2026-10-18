@@ -19,8 +19,6 @@ The classroom is **Machine Learning: from data to decisions (ML 201)**: ten lear
 
 **Deployment verified on 18 October 2026:** the public frontend returns HTTP 200; teacher and student login, workspace, notifications and logout pass through the public URL. Seven specialist agents are serving on Agent Runtime. Cloud Run hosts the web/API application and two private MCP services.
 
-**Current issue under repair:** topic-specific assessment requests through Classroom Advisor are being denied on the Runtime-to-coordinator egress path after Gateway attachment. Earlier generation acceptance passed before that attachment. Student AI-plan navigation and the removal of setup/agent navigation are deployed and verified. The latest coordinator transport change is not yet verified in the cloud.
-
 ## Suggested demo walkthrough
 
 1. Sign in as teacher and explore **Analytics**, **Learners**, curriculum coverage and a student's detailed profile. Missing evidence calls for a diagnostic; it is not a zero score.
