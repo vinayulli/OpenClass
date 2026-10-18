@@ -2,7 +2,7 @@
 
 OpenClass connects classroom evidence, personalized learning and teacher-controlled assessments. Built with **React, FastAPI, PostgreSQL, Google ADK and Gemini**, it uses **Gemini Enterprise Agent Platform (GEAP)** for specialist hosting, workload identities, managed memory and governed agent access.
 
-Built for **Google AI Builder Cup 2026** by **Team OpenClass**. Team leader: **Vinay Babu U**. Members: **Vinay and Ansuman**.
+Built for **Google AI Builder Cup 2026** by **Team OpenClass**.
 
 ## Try the live application
 
@@ -207,7 +207,7 @@ Latest recorded checks:
 | Coach and Advisor real Gemini responses with saved history | Passed |
 | Assessment generation, authenticated callback, saved draft and notification | Passed |
 | Publication, hidden answer key before submission, grading and saved attempt | Passed |
-| Student private test generation and teacher access denial | Passed; teacher request returned 403 |
+| Student private test generation | Passed |
 | Detailed learning path and intervention generation | Passed |
 | Coding review through deployed private GitHub MCP | Passed; appropriately provisional/low confidence for the sample repository |
 | Web Research through attached Gateway | Passed; four source links returned |
@@ -284,7 +284,7 @@ presentation/             Local submission deck; excluded from Git
 
 ## Scope and remaining work
 
-OpenClass is a deployed hackathon prototype, not a claim of complete [requirements](openclass_requirement.md) or production readiness. Remaining work includes broader agent-quality evaluation, load/accessibility testing, real identity-provider integration, distributed quotas, production monitoring and restore drills, advanced document ingestion, private repository support, automatic daily path scheduling and fuller relational migrations.
+OpenClass is a deployed hackathon prototype. Remaining work includes broader agent-quality evaluation, load/accessibility testing, real identity-provider integration, distributed quotas, production monitoring and restore drills, advanced document ingestion, private repository support, automatic daily path scheduling and fuller relational migrations.
 
 The mastery calculation is an explainable confidence-weighted evidence mean, not a calibrated probability. Sparse observations remain insufficient evidence even when a provisional percentage is shown. Generated questions and learning plans need pedagogical review. Source review does not execute submitted code.
 
