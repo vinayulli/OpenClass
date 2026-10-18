@@ -1,0 +1,271 @@
+[
+  {
+    "id": "mock-exam-python",
+    "course_id": "mock-course-python",
+    "title": "Mock Python diagnostic",
+    "blueprint": {
+      "title": "Mock Python diagnostic",
+      "kind": "diagnostic",
+      "concept_ids": [
+        "functions",
+        "parameters"
+      ],
+      "question_count": 2,
+      "total_marks": 4,
+      "duration_minutes": 15,
+      "difficulty": "beginner",
+      "question_types": [
+        "mcq"
+      ],
+      "release_feedback": true,
+      "student_id": null
+    },
+    "questions": [
+      {
+        "id": "mock-q1",
+        "prompt": "Which keyword defines a Python function?",
+        "type": "mcq",
+        "concept_id": "functions",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "def",
+          "class",
+          "return",
+          "import"
+        ],
+        "answer": "def",
+        "rubric": "Award 2 marks for def; otherwise 0.",
+        "explanation": "The def keyword introduces a function definition.",
+        "material_id": "mock-material-python"
+      },
+      {
+        "id": "mock-q2",
+        "prompt": "What does a Python function return if it finishes without a return statement?",
+        "type": "mcq",
+        "concept_id": "parameters",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "None",
+          "0",
+          "False",
+          "An empty string"
+        ],
+        "answer": "None",
+        "rubric": "Award 2 marks for None; otherwise 0.",
+        "explanation": "A function that finishes without return produces None.",
+        "material_id": "mock-material-python"
+      }
+    ],
+    "status": "draft",
+    "source": "Handwritten synthetic fixture, not Gemini output",
+    "created_at": "2026-10-18T09:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-exam-week-1",
+    "course_id": "mock-course-python",
+    "title": "Synthetic week 1 knowledge check",
+    "blueprint": {
+      "title": "Mock Python diagnostic",
+      "kind": "diagnostic",
+      "concept_ids": [
+        "functions",
+        "parameters"
+      ],
+      "question_count": 2,
+      "total_marks": 4,
+      "duration_minutes": 15,
+      "difficulty": "beginner",
+      "question_types": [
+        "mcq"
+      ],
+      "release_feedback": true,
+      "student_id": null
+    },
+    "questions": [
+      {
+        "id": "mock-q1",
+        "prompt": "Which keyword defines a Python function?",
+        "type": "mcq",
+        "concept_id": "functions",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "def",
+          "class",
+          "return",
+          "import"
+        ],
+        "answer": "def",
+        "rubric": "Award 2 marks for def; otherwise 0.",
+        "explanation": "The def keyword introduces a function definition.",
+        "material_id": "mock-material-python"
+      },
+      {
+        "id": "mock-q2",
+        "prompt": "What does a Python function return if it finishes without a return statement?",
+        "type": "mcq",
+        "concept_id": "parameters",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "None",
+          "0",
+          "False",
+          "An empty string"
+        ],
+        "answer": "None",
+        "rubric": "Award 2 marks for None; otherwise 0.",
+        "explanation": "A function that finishes without return produces None.",
+        "material_id": "mock-material-python"
+      }
+    ],
+    "status": "published",
+    "source": "Synthetic demonstration assessment",
+    "created_at": "2026-10-18T09:00:00+00:00",
+    "synthetic": true,
+    "published_at": "2026-10-11T09:00:00+00:00"
+  },
+  {
+    "id": "mock-exam-week-2",
+    "course_id": "mock-course-python",
+    "title": "Synthetic week 2 knowledge check",
+    "blueprint": {
+      "title": "Mock Python diagnostic",
+      "kind": "diagnostic",
+      "concept_ids": [
+        "functions",
+        "parameters"
+      ],
+      "question_count": 2,
+      "total_marks": 4,
+      "duration_minutes": 15,
+      "difficulty": "beginner",
+      "question_types": [
+        "mcq"
+      ],
+      "release_feedback": true,
+      "student_id": null
+    },
+    "questions": [
+      {
+        "id": "mock-q1",
+        "prompt": "Which keyword defines a Python function?",
+        "type": "mcq",
+        "concept_id": "functions",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "def",
+          "class",
+          "return",
+          "import"
+        ],
+        "answer": "def",
+        "rubric": "Award 2 marks for def; otherwise 0.",
+        "explanation": "The def keyword introduces a function definition.",
+        "material_id": "mock-material-python"
+      },
+      {
+        "id": "mock-q2",
+        "prompt": "What does a Python function return if it finishes without a return statement?",
+        "type": "mcq",
+        "concept_id": "parameters",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "None",
+          "0",
+          "False",
+          "An empty string"
+        ],
+        "answer": "None",
+        "rubric": "Award 2 marks for None; otherwise 0.",
+        "explanation": "A function that finishes without return produces None.",
+        "material_id": "mock-material-python"
+      }
+    ],
+    "status": "published",
+    "source": "Synthetic demonstration assessment",
+    "created_at": "2026-10-18T09:00:00+00:00",
+    "synthetic": true,
+    "published_at": "2026-10-12T09:00:00+00:00"
+  },
+  {
+    "id": "mock-exam-targeted",
+    "course_id": "mock-course-python",
+    "title": "Targeted functions practice",
+    "blueprint": {
+      "title": "Mock Python diagnostic",
+      "kind": "practice",
+      "concept_ids": [
+        "functions",
+        "parameters"
+      ],
+      "question_count": 2,
+      "total_marks": 4,
+      "duration_minutes": 15,
+      "difficulty": "beginner",
+      "question_types": [
+        "mcq"
+      ],
+      "release_feedback": true,
+      "student_id": null
+    },
+    "questions": [
+      {
+        "id": "mock-q1",
+        "prompt": "Which keyword defines a Python function?",
+        "type": "mcq",
+        "concept_id": "functions",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "def",
+          "class",
+          "return",
+          "import"
+        ],
+        "answer": "def",
+        "rubric": "Award 2 marks for def; otherwise 0.",
+        "explanation": "The def keyword introduces a function definition.",
+        "material_id": "mock-material-python"
+      },
+      {
+        "id": "mock-q2",
+        "prompt": "What does a Python function return if it finishes without a return statement?",
+        "type": "mcq",
+        "concept_id": "parameters",
+        "objective": "Write reusable Python functions",
+        "difficulty": "beginner",
+        "marks": 2,
+        "options": [
+          "None",
+          "0",
+          "False",
+          "An empty string"
+        ],
+        "answer": "None",
+        "rubric": "Award 2 marks for None; otherwise 0.",
+        "explanation": "A function that finishes without return produces None.",
+        "material_id": "mock-material-python"
+      }
+    ],
+    "status": "published",
+    "source": "Synthetic targeted test",
+    "created_at": "2026-10-18T09:00:00+00:00",
+    "synthetic": true,
+    "assigned_student_ids": [
+      "mock-student-01"
+    ]
+  }
+]

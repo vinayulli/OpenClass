@@ -1,0 +1,29 @@
+[
+  {
+    "id": "mock-code-report",
+    "course_id": "mock-course-python",
+    "student_id": "mock-student-07",
+    "assignment_id": "mock-coding-assignment",
+    "url": "https://github.com/example/synthetic-coursework",
+    "scope": "Handwritten demonstration report; no repository fetched and no code executed.",
+    "status": "teacher_review_required",
+    "report": {
+      "summary": "Synthetic sample shows constructor injection and delegation, with limited visible testing evidence.",
+      "demonstrated_skills": [
+        "Dependency injection",
+        "Delegation to a composed collaborator"
+      ],
+      "gaps": [
+        "Testing coverage is not established by the visible sample."
+      ],
+      "references": [
+        "library.py:2-5"
+      ],
+      "confidence": "medium",
+      "provisional_rating": 65,
+      "rating_rationale": "Illustrative sample rubric: collaboration 30/40, clarity 25/30, visible testing evidence 10/30. This is a handwritten demo estimate, not an executed review or final grade."
+    },
+    "created_at": "2026-10-18T09:00:00+00:00",
+    "synthetic": true
+  }
+]

@@ -1,0 +1,330 @@
+[
+  {
+    "id": "mock-teacher-01",
+    "name": "Morgan Demo",
+    "email": "teacher@mock.openclass.test",
+    "role": "teacher",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-01",
+    "name": "Synthetic Learner 01",
+    "email": "student01@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-02",
+    "name": "Synthetic Learner 02",
+    "email": "student02@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-03",
+    "name": "Synthetic Learner 03",
+    "email": "student03@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-04",
+    "name": "Synthetic Learner 04",
+    "email": "student04@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-05",
+    "name": "Synthetic Learner 05",
+    "email": "student05@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-06",
+    "name": "Synthetic Learner 06",
+    "email": "student06@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-07",
+    "name": "Synthetic Learner 07",
+    "email": "student07@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-08",
+    "name": "Synthetic Learner 08",
+    "email": "student08@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-09",
+    "name": "Synthetic Learner 09",
+    "email": "student09@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-10",
+    "name": "Synthetic Learner 10",
+    "email": "student10@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-11",
+    "name": "Synthetic Learner 11",
+    "email": "student11@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-12",
+    "name": "Synthetic Learner 12",
+    "email": "student12@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-13",
+    "name": "Synthetic Learner 13",
+    "email": "student13@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-14",
+    "name": "Synthetic Learner 14",
+    "email": "student14@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-15",
+    "name": "Synthetic Learner 15",
+    "email": "student15@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-16",
+    "name": "Synthetic Learner 16",
+    "email": "student16@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-17",
+    "name": "Synthetic Learner 17",
+    "email": "student17@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-18",
+    "name": "Synthetic Learner 18",
+    "email": "student18@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-19",
+    "name": "Synthetic Learner 19",
+    "email": "student19@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-20",
+    "name": "Synthetic Learner 20",
+    "email": "student20@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-21",
+    "name": "Synthetic Learner 21",
+    "email": "student21@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-22",
+    "name": "Synthetic Learner 22",
+    "email": "student22@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-23",
+    "name": "Synthetic Learner 23",
+    "email": "student23@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-24",
+    "name": "Synthetic Learner 24",
+    "email": "student24@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-25",
+    "name": "Synthetic Learner 25",
+    "email": "student25@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-26",
+    "name": "Synthetic Learner 26",
+    "email": "student26@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-27",
+    "name": "Synthetic Learner 27",
+    "email": "student27@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-28",
+    "name": "Synthetic Learner 28",
+    "email": "student28@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-29",
+    "name": "Synthetic Learner 29",
+    "email": "student29@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-30",
+    "name": "Synthetic Learner 30",
+    "email": "student30@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-31",
+    "name": "Synthetic Learner 31",
+    "email": "student31@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-32",
+    "name": "Synthetic Learner 32",
+    "email": "student32@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-33",
+    "name": "Synthetic Learner 33",
+    "email": "student33@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-34",
+    "name": "Synthetic Learner 34",
+    "email": "student34@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-35",
+    "name": "Synthetic Learner 35",
+    "email": "student35@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-36",
+    "name": "Synthetic Learner 36",
+    "email": "student36@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-37",
+    "name": "Synthetic Learner 37",
+    "email": "student37@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-38",
+    "name": "Synthetic Learner 38",
+    "email": "student38@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-39",
+    "name": "Synthetic Learner 39",
+    "email": "student39@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  },
+  {
+    "id": "mock-student-40",
+    "name": "Synthetic Learner 40",
+    "email": "student40@mock.openclass.test",
+    "role": "student",
+    "org": "mock-academy",
+    "synthetic": true
+  }
+]

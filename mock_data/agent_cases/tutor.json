@@ -1,0 +1,138 @@
+{
+  "agent": "tutor",
+  "context": {
+    "curriculum": {
+      "name": "Python: concepts to practice",
+      "objectives": [
+        "Write reusable Python functions",
+        "Apply encapsulation and composition",
+        "Build reliable programs with tests"
+      ],
+      "concepts": [
+        {
+          "id": "functions",
+          "name": "Functions",
+          "prerequisites": []
+        },
+        {
+          "id": "parameters",
+          "name": "Parameters and return values",
+          "prerequisites": [
+            "functions"
+          ]
+        },
+        {
+          "id": "encapsulation",
+          "name": "Encapsulation",
+          "prerequisites": [
+            "functions"
+          ]
+        },
+        {
+          "id": "composition",
+          "name": "Composition",
+          "prerequisites": [
+            "encapsulation"
+          ]
+        },
+        {
+          "id": "testing",
+          "name": "Unit testing",
+          "prerequisites": [
+            "functions",
+            "parameters"
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "id": "mock-material-python",
+          "title": "Approved Python reference",
+          "content": "A function groups reusable behavior. The def keyword defines a function. Parameters receive input and return passes a result to the caller. A function that reaches its end without return produces None. Encapsulation groups data and behavior behind an interface. Composition combines objects to provide behavior. Unit tests compare expected and actual behavior, including boundary cases.",
+          "created_at": "2026-10-18T09:00:00+00:00"
+        }
+      ]
+    },
+    "question": "I am not sure what a function returns. Can you help?",
+    "twin": {
+      "student_id": "mock-student-02",
+      "course_id": "mock-course-python",
+      "concepts": [
+        {
+          "id": "functions",
+          "name": "Functions",
+          "prerequisites": [],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        },
+        {
+          "id": "parameters",
+          "name": "Parameters and return values",
+          "prerequisites": [
+            "functions"
+          ],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        },
+        {
+          "id": "encapsulation",
+          "name": "Encapsulation",
+          "prerequisites": [
+            "functions"
+          ],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        },
+        {
+          "id": "composition",
+          "name": "Composition",
+          "prerequisites": [
+            "encapsulation"
+          ],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        },
+        {
+          "id": "testing",
+          "name": "Unit testing",
+          "prerequisites": [
+            "functions",
+            "parameters"
+          ],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        }
+      ],
+      "mastery": null,
+      "evidence_count": 0,
+      "coverage": 0,
+      "pace": "Not enough timed history",
+      "method": "Confidence-weighted evidence average; confidence reflects coverage, not calibrated probability."
+    },
+    "conversation": [],
+    "learner_memories": []
+  },
+  "example_output": {
+    "message": "A return statement passes a value to the caller. If a function finishes without one, it produces None. Before we go further, what do you think the caller receives from a function that only prints a message?"
+  },
+  "review_criteria": [
+    "Do not infer low ability from missing evidence",
+    "Use a diagnostic question",
+    "Do not solve an active graded assessment"
+  ]
+}

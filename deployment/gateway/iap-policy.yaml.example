@@ -1,0 +1,10 @@
+name: openclass-agent-access
+target:
+  resources:
+    - projects/PROJECT_ID/locations/REGION/agentGateways/openclass-egress
+policyProfile: REQUEST_AUTHZ
+action: CUSTOM
+customProvider:
+  authzExtension:
+    resources:
+      - projects/PROJECT_ID/locations/REGION/authzExtensions/openclass-iap

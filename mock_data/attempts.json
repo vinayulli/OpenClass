@@ -1,0 +1,410 @@
+[
+  {
+    "id": "mock-attempt-1-1",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-1",
+    "student_id": "mock-student-01",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 2,
+    "total_marks": 4,
+    "started_at": "2026-10-11T10:00:00+00:00",
+    "submitted_at": "2026-10-11T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-1-2",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-1",
+    "student_id": "mock-student-02",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "class",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 0,
+    "total_marks": 4,
+    "started_at": "2026-10-11T10:00:00+00:00",
+    "submitted_at": "2026-10-11T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-1-3",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-1",
+    "student_id": "mock-student-03",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "class",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 0,
+    "total_marks": 4,
+    "started_at": "2026-10-11T10:00:00+00:00",
+    "submitted_at": "2026-10-11T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-1-4",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-1",
+    "student_id": "mock-student-04",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "None"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      }
+    ],
+    "score": 4,
+    "total_marks": 4,
+    "started_at": "2026-10-11T10:00:00+00:00",
+    "submitted_at": "2026-10-11T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-1-5",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-1",
+    "student_id": "mock-student-05",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 2,
+    "total_marks": 4,
+    "started_at": "2026-10-11T10:00:00+00:00",
+    "submitted_at": "2026-10-11T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-1-6",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-1",
+    "student_id": "mock-student-06",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 2,
+    "total_marks": 4,
+    "started_at": "2026-10-11T10:00:00+00:00",
+    "submitted_at": "2026-10-11T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-2-1",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-2",
+    "student_id": "mock-student-01",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "None"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      }
+    ],
+    "score": 4,
+    "total_marks": 4,
+    "started_at": "2026-10-12T10:00:00+00:00",
+    "submitted_at": "2026-10-12T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-2-2",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-2",
+    "student_id": "mock-student-02",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 2,
+    "total_marks": 4,
+    "started_at": "2026-10-12T10:00:00+00:00",
+    "submitted_at": "2026-10-12T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-2-3",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-2",
+    "student_id": "mock-student-03",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 2,
+    "total_marks": 4,
+    "started_at": "2026-10-12T10:00:00+00:00",
+    "submitted_at": "2026-10-12T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-2-4",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-2",
+    "student_id": "mock-student-04",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "None"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      }
+    ],
+    "score": 4,
+    "total_marks": 4,
+    "started_at": "2026-10-12T10:00:00+00:00",
+    "submitted_at": "2026-10-12T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-2-5",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-2",
+    "student_id": "mock-student-05",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "None"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      }
+    ],
+    "score": 4,
+    "total_marks": 4,
+    "started_at": "2026-10-12T10:00:00+00:00",
+    "submitted_at": "2026-10-12T10:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "id": "mock-attempt-2-6",
+    "course_id": "mock-course-python",
+    "exam_id": "mock-exam-week-2",
+    "student_id": "mock-student-06",
+    "status": "graded",
+    "answers": {
+      "mock-q1": "def",
+      "mock-q2": "0"
+    },
+    "results": [
+      {
+        "question_id": "mock-q1",
+        "concept_id": "functions",
+        "score": 2,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Correct"
+      },
+      {
+        "question_id": "mock-q2",
+        "concept_id": "parameters",
+        "score": 0,
+        "marks": 2,
+        "method": "objective",
+        "feedback": "Review this concept"
+      }
+    ],
+    "score": 2,
+    "total_marks": 4,
+    "started_at": "2026-10-12T10:00:00+00:00",
+    "submitted_at": "2026-10-12T10:00:00+00:00",
+    "synthetic": true
+  }
+]

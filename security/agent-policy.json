@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "default": "deny",
+  "calls": {
+    "api": ["teacher", "tutor", "coordinator", "exam", "code", "path", "intervention"],
+    "teacher": ["coordinator"],
+    "tutor": ["web", "coordinator"],
+    "coordinator": ["exam"],
+    "exam": [], "code": [], "path": [], "intervention": [], "web": []
+  },
+  "tools": {
+    "teacher": {"data": ["get_course_materials", "get_learning_twin", "get_student_progress", "search_learner_memory", "get_class_summary"]},
+    "tutor": {"data": ["get_course_materials", "get_learning_twin", "get_student_progress", "search_learner_memory", "get_class_summary"]},
+    "exam": {"data": ["get_course_materials", "get_learning_twin"]},
+    "path": {"data": ["get_course_materials", "get_student_progress", "get_learning_twin"]},
+    "intervention": {"data": ["get_course_materials", "get_learning_twin"]},
+    "code": {"github": ["inspect_public_repository"]},
+    "web": {}, "api": {}, "coordinator": {}
+  }
+}

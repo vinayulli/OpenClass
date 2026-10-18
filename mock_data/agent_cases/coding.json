@@ -1,0 +1,72 @@
+{
+  "agent": "code",
+  "context": {
+    "concepts": [
+      {
+        "id": "functions",
+        "name": "Functions",
+        "prerequisites": []
+      },
+      {
+        "id": "parameters",
+        "name": "Parameters and return values",
+        "prerequisites": [
+          "functions"
+        ]
+      },
+      {
+        "id": "encapsulation",
+        "name": "Encapsulation",
+        "prerequisites": [
+          "functions"
+        ]
+      },
+      {
+        "id": "composition",
+        "name": "Composition",
+        "prerequisites": [
+          "encapsulation"
+        ]
+      },
+      {
+        "id": "testing",
+        "name": "Unit testing",
+        "prerequisites": [
+          "functions",
+          "parameters"
+        ]
+      }
+    ],
+    "repository": {
+      "url": "https://github.com/example/synthetic-coursework",
+      "scope": "Local synthetic text fixture; do not fetch this illustrative URL.",
+      "files": [
+        {
+          "path": "library.py",
+          "sha": "synthetic-not-a-real-git-sha",
+          "content": "1: class Library:\n2:     def __init__(self, catalog):\n3:         self.catalog = catalog\n4:     def find(self, title):\n5:         return self.catalog.lookup(title)"
+        }
+      ]
+    }
+  },
+  "example_output": {
+    "summary": "The supplied snippet demonstrates dependency injection and delegation to a composed object. No code has been executed.",
+    "demonstrated_skills": [
+      "Constructor accepts a collaborator",
+      "find delegates to catalog.lookup"
+    ],
+    "gaps": [
+      "Tests and validation are not visible in this limited sample; this does not prove they are absent from a full repository."
+    ],
+    "references": [
+      "library.py:2-3",
+      "library.py:4-5"
+    ],
+    "confidence": "medium"
+  },
+  "review_criteria": [
+    "Use path/line references",
+    "Never execute source code",
+    "Do not equate missing files with missing skills"
+  ]
+}

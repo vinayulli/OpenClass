@@ -1,0 +1,35 @@
+{
+  "version": "1.1.0",
+  "synthetic": true,
+  "generated_at": "2026-10-18T09:00:00+00:00",
+  "organization_id": "mock-academy",
+  "counts": {
+    "teachers": 1,
+    "students": 40,
+    "courses": 2,
+    "evidence": 68,
+    "exams": 4,
+    "attempts": 12,
+    "coding_assignments": 1,
+    "code_reviews": 1,
+    "interventions": 1,
+    "agent_cases": 5
+  },
+  "seed_files": [
+    "accounts.json",
+    "courses.json",
+    "evidence.json",
+    "exams.json",
+    "interventions.json",
+    "attempts.json",
+    "coding_assignments.json",
+    "code_reviews.json"
+  ],
+  "example_only_files": [
+    "learning_twins.json",
+    "agent_cases/",
+    "memory_examples.json",
+    "security_cases.json"
+  ],
+  "note": "All agent outputs and historical attempts are synthetic examples. Historical attempts illustrate assessment analytics and are deliberately not replayed into baseline Twin evidence. No cloud resources, model calls or memory writes are performed by generation."
+}

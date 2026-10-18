@@ -1,0 +1,21 @@
+{
+  "tools": [
+    {
+      "name": "inspect_public_repository",
+      "description": "Read a bounded source sample from an authorized public GitHub repository. Never executes code.",
+      "inputSchema": {
+        "properties": {
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "title": "inspect_public_repositoryArguments",
+        "type": "object"
+      }
+    }
+  ]
+}

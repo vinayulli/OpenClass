@@ -1,0 +1,6 @@
+name: openclass-model-armor
+service: modelarmor.REGION.rep.googleapis.com
+failOpen: false
+timeout: 1s
+metadata:
+  model_armor_settings: '[{"request_template_id":"projects/PROJECT_ID/locations/REGION/templates/openclass","response_template_id":"projects/PROJECT_ID/locations/REGION/templates/openclass"}]'

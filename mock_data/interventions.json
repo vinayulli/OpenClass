@@ -1,0 +1,16 @@
+[
+  {
+    "id": "mock-plan-composition",
+    "course_id": "mock-course-python",
+    "student_id": "mock-student-07",
+    "title": "Apply composition in a small program",
+    "concept_id": "composition",
+    "rationale": "Synthetic theory evidence mock-evidence-7-theory-1 scores 1.0 while reviewed coding evidence mock-evidence-7-code-1 scores 0.0. This suggests a possible theory-to-practice gap requiring review.",
+    "lesson": "Composition combines objects. Let a Library object hold a Catalog object and delegate lookups to it.",
+    "exercise": "Implement a Library that receives a Catalog object and uses its lookup method. Write a test using a small fake Catalog.",
+    "success_criteria": "In a new educator-reviewed exercise, demonstrate delegation and explain why the relationship uses composition. Compare new evidence with the baseline.",
+    "status": "draft",
+    "created_at": "2026-10-18T09:00:00+00:00",
+    "synthetic": true
+  }
+]

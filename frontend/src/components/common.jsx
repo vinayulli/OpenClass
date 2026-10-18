@@ -1,0 +1,8 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowDownRight, ArrowRight, BookOpen, BrainCircuit, Check, ChevronDown, ChevronRight, CircleHelp, ClipboardList, Clock3, Code2, Compass, FileText, GraduationCap, LayoutDashboard, LogOut, Plus, Search, Send, ShieldCheck, Sparkles, Users, X, Zap } from 'lucide-react';
+
+export function Badge({children,tone=''}) { return <span className={'badge '+tone}>{children}</span>; }
+export function Empty({icon:Icon=BookOpen,title,children}) {return <div className="empty"><Icon size={34}/><h3>{title}</h3><p>{children}</p></div>}
+export function Modal({title,close,children}) { const ref=useRef(); useEffect(()=>{const previous=document.activeElement; ref.current?.focus(); const key=e=>{if(e.key==='Escape')close(); if(e.key==='Tab'){const els=ref.current.querySelectorAll('button,input,textarea,select,[tabindex="0"]'); const first=els[0],last=els[els.length-1]; if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}}; document.addEventListener('keydown',key); return()=>{document.removeEventListener('keydown',key);previous?.focus()};},[]); return <div className="modal-backdrop"><section className="modal" ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-label={title}><div className="modal-head"><h2>{title}</h2><button className="icon-button" onClick={close} aria-label="Close dialog"><X/></button></div>{children}</section></div>}
+export function Field({label,children}) {return <label className="field"><span>{label}</span>{children}</label>}
+

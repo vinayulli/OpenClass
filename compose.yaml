@@ -1,0 +1,33 @@
+services:
+  cloud-sql-proxy:
+    profiles: [cloud]
+    image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.26.2
+    command:
+      - --address=0.0.0.0
+      - --port=5432
+      - --credentials-file=/credentials/adc.json
+      - ${CLOUD_SQL_CONNECTION_NAME:-hackathon-506016:us-central1:openclass-postgres}
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - ${APPDATA}/gcloud/application_default_credentials.json:/credentials/adc.json:ro
+    restart: unless-stopped
+  postgres:
+    profiles: [local]
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: openclass
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-openclass_local}
+      POSTGRES_DB: openclass
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - openclass_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openclass -d openclass"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+volumes:
+  openclass_pg:

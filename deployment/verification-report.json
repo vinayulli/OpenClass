@@ -1,0 +1,773 @@
+{
+  "model": "gemini-3.8-flash",
+  "database": "disposable local PostgreSQL",
+  "checks": [
+    {
+      "name": "ML demo: ten students, twenty topics, 70% taught",
+      "status": "passed"
+    },
+    {
+      "name": "Two live detailed Learning Path generations with reference links",
+      "status": "passed",
+      "count": 2
+    },
+    {
+      "name": "Advisor delegates ten A2A variants; ten authenticated completion webhooks; twenty distinct questions",
+      "status": "passed",
+      "learners": 10,
+      "questions": 20
+    },
+    {
+      "name": "Published variant: recipient isolation, hidden answer keys and grading",
+      "status": "passed"
+    },
+    {
+      "name": "Coach delegates private test, supplies open link, enforces privacy and returns private score",
+      "status": "passed"
+    },
+    {
+      "name": "Student feedback drives a new versioned detailed learning path",
+      "status": "passed"
+    },
+    {
+      "name": "SSE progress, saved message timings and anonymous class ranking",
+      "status": "passed"
+    }
+  ],
+  "managed_memory_tested": false,
+  "model_armor_tested": false,
+  "sample_learning_plan": {
+    "title": "Machine Learning Workflow and Evaluation Study Path",
+    "rationale": "Focuses on establishing clean validation boundaries and leak-free preprocessing pipelines across taught syllabus topics where assessment evidence indicates a need for structured review.",
+    "starting_point": "Demonstrates solid modeling proficiency in linear regression and decision trees, but recent formative checks show review is required for splitting strategies (mastery 52%), preprocessing leakage (mastery 48%), cross-validation procedures (mastery 45%), and regularization tuning (mastery 50%).",
+    "learning_goals": [
+      "Design leak-free train, validation, and test splits that preserve target and entity distributions.",
+      "Implement scikit-learn transformers strictly within training splits to prevent data leakage.",
+      "Conduct stratified cross-validation routines that encapsulate preprocessing transformations.",
+      "Tune L1 and L2 regularization penalties based on cross-validation performance without touching final test sets."
+    ],
+    "study_schedule": "Four 30-minute self-study sessions over one week. Dedicate one session per step, completing the practical task and pre-submission checks before moving to the next concept.",
+    "feedback_adaptation": "In direct response to student feedback requesting a small leakage example and a submission checklist, Step 2 now provides a clear code comparison of preprocessing leakage versus clean pipeline isolation alongside a comprehensive five-point submission checklist.",
+    "steps": [
+      {
+        "concept_id": "train-test-split",
+        "title": "Establishing Sound Data Partitions",
+        "explanation": "Data splitting establishes the boundary between training evidence and final model evaluation. A test set must remain untouched throughout exploratory modeling, feature engineering, and hyperparameter selection. For classification problems, stratified partitioning preserves class proportions across folds. For grouped records or time series, random row splitting causes target leakage; splits must isolate grouping units or respect temporal ordering.",
+        "learning_objectives": [
+          "Identify appropriate splitting strategies for balanced, imbalanced, and grouped tabular datasets.",
+          "Partition data into distinct training and testing sets before applying any data transformations."
+        ],
+        "prerequisites": [
+          "ML workflow and problem framing"
+        ],
+        "worked_example": "Consider a dataset of 1,000 patient records where each patient has multiple clinical visits. Performing a naive random split would place visits from the same patient into both training and testing sets, causing entity leakage. The correct design groups splits by patient ID so unseen patients form the hold-out evaluation partition.",
+        "common_mistakes": [
+          "Using test split performance to iterate on feature engineering or hyperparameter choices.",
+          "Failing to stratify splits when predicting an imbalanced target variable."
+        ],
+        "practice": "Take a synthetic binary classification dataset with a 90/10 class imbalance. Implement train_test_split using stratify=y and test_size=0.2. Print value counts of both splits to confirm identical class ratios.",
+        "self_check_questions": [
+          "Why does tuning hyperparameters on the test partition invalidate generalization estimates?",
+          "Under what data conditions is standard uniform random sampling insufficient?"
+        ],
+        "references": [
+          {
+            "resource_id": "course:ml-reference-train-test-split",
+            "purpose": "Read the class reference guidelines on data splitting to understand when stratification and grouping are required."
+          },
+          {
+            "resource_id": "sklearn:train-test-split",
+            "purpose": "Review the official cross_validation user guide for the parameters governing stratification and split reproducibility."
+          }
+        ],
+        "completion_check": "Execute the split script and verify that the target proportion in both train and test partitions matches the overall population within 1%.",
+        "estimated_minutes": 25
+      },
+      {
+        "concept_id": "preprocessing",
+        "title": "Scaling, Encoding, and Preventing Leakage",
+        "explanation": "Preprocessing leakage happens when summary statistics from unseen data influence model training. Computing scaling parameters (mean, standard deviation) or imputation values across the entire dataset before splitting leaks hold-out distribution properties into training. All transformers must be fit solely on training folds and applied to test folds via transform without refitting.",
+        "learning_objectives": [
+          "Distinguish between fit and transform operations across training and evaluation splits.",
+          "Construct scikit-learn Pipeline objects that prevent data leakage during preprocessing.",
+          "Apply a pre-submission leakage checklist before submitting any model."
+        ],
+        "prerequisites": [
+          "Data quality and missing values",
+          "Train / validation / test splits"
+        ],
+        "worked_example": "Here is a concrete demonstration comparing leaky code with a leak-free pipeline:\n\n```python\n# Leaky approach: Scaler learns test distribution properties\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import Pipeline\n\n# LEAK: scaler.fit_transform(X_all) before split\n\n# Clean approach: Transformer fit exclusively on training data\npipe = Pipeline([\n    ('scaler', StandardScaler()),\n    ('clf', LogisticRegression())\n])\npipe.fit(X_train, y_train)\nscore = pipe.score(X_test, y_test)\n```\n\nPre-submission checklist:\n1. Was train_test_split executed before calling any fit or fit_transform?\n2. Are all scalers and encoders encapsulated inside a Pipeline?\n3. Are imputation values derived strictly from X_train?\n4. Is transform (never fit) called on X_test?\n5. Are target variables excluded from feature transformation matrices?",
+        "common_mistakes": [
+          "Calling fit_transform on the combined dataset prior to splitting.",
+          "Computing categorical encoding frequencies using both train and test sets."
+        ],
+        "practice": "Build a Pipeline containing a SimpleImputer, a StandardScaler, and a LogisticRegression classifier. Fit the pipeline on X_train and evaluate on X_test, ensuring no manual transformer fitting occurs outside the pipeline.",
+        "self_check_questions": [
+          "What specific mathematical values leak when StandardScaler is fit on the full dataset?",
+          "Why does encapsulating preprocessing within a Pipeline guarantee leak-free evaluation?"
+        ],
+        "references": [
+          {
+            "resource_id": "course:ml-reference-preprocessing",
+            "purpose": "Study the class reference notes on data leakage mechanisms during scaling and encoding."
+          },
+          {
+            "resource_id": "sklearn:preprocessing",
+            "purpose": "Examine the official preprocessing documentation on proper fit and transform usage with pipelines."
+          }
+        ],
+        "completion_check": "Inspect the fitted pipeline to confirm scaler mean_ attributes were computed exclusively from X_train dimensions and lengths.",
+        "estimated_minutes": 30
+      },
+      {
+        "concept_id": "cross-validation",
+        "title": "Robust Model Selection and Validation",
+        "explanation": "Cross-validation estimates model generalization by iteratively training and evaluating across distinct data folds. To avoid optimistic bias, every data-dependent preprocessing step must re-run from scratch within each training fold. Cross-validation guides model and hyperparameter selection, while a separate final test set remains held out for final reporting.",
+        "learning_objectives": [
+          "Set up k-fold cross-validation routines using scikit-learn pipelines.",
+          "Evaluate validation variance across folds to assess model stability.",
+          "Separate hyperparameter tuning via validation folds from final test evaluation."
+        ],
+        "prerequisites": [
+          "Train / validation / test splits",
+          "Scaling, encoding and leakage"
+        ],
+        "worked_example": "When selecting a model, pass the entire Pipeline into cross_val_score rather than preprocessing X before cross-validation:\n\n```python\nfrom sklearn.model_selection import StratifiedKFold, cross_val_score\n\ncv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\nscores = cross_val_score(pipe, X_train, y_train, cv=cv, scoring='f1')\nprint(f'Mean CV F1: {scores.mean():.3f} +/- {scores.std():.3f}')\n```\n\nThis guarantees that fold-specific scalers are fit purely on the 4 training folds during each iteration.",
+        "common_mistakes": [
+          "Passing pre-transformed feature matrices into cross_val_score.",
+          "Selecting hyperparameters using scores obtained on the final hold-out test set."
+        ],
+        "practice": "Implement a 5-fold StratifiedKFold cross-validation on X_train for two competing classifiers wrapped in preprocessing pipelines. Compare their mean performance and standard deviation across folds.",
+        "self_check_questions": [
+          "Why is cross_val_score standard deviation as informative as the mean score?",
+          "How does cross-validation mitigate the risk of lucky or unlucky single train-test splits?"
+        ],
+        "references": [
+          {
+            "resource_id": "course:ml-reference-cross-validation",
+            "purpose": "Read the class reference section on cross-validation folds and reporting performance variability."
+          },
+          {
+            "resource_id": "sklearn:cross-validation",
+            "purpose": "Review the official cross-validation documentation focusing on stratified splitting and pipeline integration."
+          }
+        ],
+        "completion_check": "Generate and print the individual scores for all 5 folds along with the mean and standard deviation, confirming each fold executed cleanly without data warnings.",
+        "estimated_minutes": 30
+      },
+      {
+        "concept_id": "regularization",
+        "title": "Controlling Overfitting with Regularization",
+        "explanation": "Regularization constrains model parameter magnitudes to prevent overfitting noisy training patterns. Ridge adds an L2 penalty on squared coefficients, shrinking weights smoothly, while Lasso adds an L1 penalty on absolute coefficients, driving uninformative weights to zero. Because penalty terms penalize absolute parameter scale, all numerical features must be scaled to identical units prior to penalty calculation.",
+        "learning_objectives": [
+          "Explain the functional differences between L1 and L2 penalty formulations.",
+          "Tune regularization hyperparameter C or alpha using cross-validation over training data.",
+          "Verify that feature scaling precedes penalty calculation in regularized linear models."
+        ],
+        "prerequisites": [
+          "Linear regression",
+          "Cross-validation and model selection"
+        ],
+        "worked_example": "Tune the regularization strength parameter using RidgeCV or GridSearchCV within X_train:\n\n```python\nfrom sklearn.linear_model import RidgeClassifier\nfrom sklearn.model_selection import GridSearchCV\n\nparam_grid = {'clf__alpha': [0.01, 0.1, 1.0, 10.0, 100.0]}\ngrid = GridSearchCV(pipe_ridge, param_grid, cv=5, scoring='accuracy')\ngrid.fit(X_train, y_train)\nprint(f'Optimal Alpha: {grid.best_params_}')\n```\n\nOnly after grid.fit identifies the best alpha is grid.score evaluated once on the untouched X_test.",
+        "common_mistakes": [
+          "Applying Ridge or Lasso without standardizing input features, causing features with large numeric scales to dominate penalties.",
+          "Tuning alpha values based directly on test set performance."
+        ],
+        "practice": "Create a pipeline with StandardScaler and LogisticRegression with an L1 (Lasso) penalty. Run GridSearchCV across five values of C on X_train, identify the optimal C, and record non-zero feature weights.",
+        "self_check_questions": [
+          "Why does unscaled data distort regularized coefficient penalties?",
+          "What observable difference in coefficient values distinguishes L1 from L2 regularization?"
+        ],
+        "references": [
+          {
+            "resource_id": "course:ml-reference-regularization",
+            "purpose": "Study the class reference notes on L1 vs L2 penalties and proper penalty tuning techniques."
+          },
+          {
+            "resource_id": "sklearn:regularization",
+            "purpose": "Review the official scikit-learn guide on regularized linear models and alpha parameter selection."
+          }
+        ],
+        "completion_check": "Display the best parameter dictionary from grid search and verify final performance on the held-out test partition.",
+        "estimated_minutes": 30
+      }
+    ],
+    "reference_catalog": [
+      {
+        "id": "course:ml-reference-ml-workflow",
+        "title": "ML workflow and problem framing - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-data-quality",
+        "title": "Data quality and missing values - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-descriptive-statistics",
+        "title": "Exploratory statistics - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-probability",
+        "title": "Probability and uncertainty - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-train-test-split",
+        "title": "Train / validation / test splits - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-preprocessing",
+        "title": "Scaling, encoding and leakage - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-linear-regression",
+        "title": "Linear regression - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-regression-metrics",
+        "title": "MAE, RMSE and R-squared - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-logistic-regression",
+        "title": "Logistic regression - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-classification-metrics",
+        "title": "Precision, recall, F1 and ROC - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-knn",
+        "title": "Nearest-neighbor models - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-decision-trees",
+        "title": "Decision trees - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-cross-validation",
+        "title": "Cross-validation and model selection - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "course:ml-reference-regularization",
+        "title": "Overfitting and regularization - class reference",
+        "url": "/courses/machine-learning/curriculum",
+        "kind": "course",
+        "concept_ids": [
+          "ml-workflow",
+          "data-quality",
+          "descriptive-statistics",
+          "probability",
+          "train-test-split",
+          "preprocessing",
+          "linear-regression",
+          "regression-metrics",
+          "logistic-regression",
+          "classification-metrics",
+          "knn",
+          "decision-trees",
+          "cross-validation",
+          "regularization",
+          "ensembles",
+          "feature-selection",
+          "clustering",
+          "pca",
+          "neural-networks",
+          "model-deployment"
+        ]
+      },
+      {
+        "id": "sklearn:ml-workflow",
+        "title": "scikit-learn guide: ML workflow and problem framing",
+        "url": "https://scikit-learn.org/stable/getting_started.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "ml-workflow"
+        ]
+      },
+      {
+        "id": "sklearn:data-quality",
+        "title": "scikit-learn guide: Data quality and missing values",
+        "url": "https://scikit-learn.org/stable/modules/impute.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "data-quality"
+        ]
+      },
+      {
+        "id": "sklearn:descriptive-statistics",
+        "title": "scikit-learn guide: Exploratory statistics",
+        "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "descriptive-statistics"
+        ]
+      },
+      {
+        "id": "sklearn:probability",
+        "title": "scikit-learn guide: Probability and uncertainty",
+        "url": "https://scikit-learn.org/stable/modules/calibration.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "probability"
+        ]
+      },
+      {
+        "id": "sklearn:train-test-split",
+        "title": "scikit-learn guide: Train / validation / test splits",
+        "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "train-test-split"
+        ]
+      },
+      {
+        "id": "sklearn:preprocessing",
+        "title": "scikit-learn guide: Scaling, encoding and leakage",
+        "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "preprocessing"
+        ]
+      },
+      {
+        "id": "sklearn:linear-regression",
+        "title": "scikit-learn guide: Linear regression",
+        "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "linear-regression"
+        ]
+      },
+      {
+        "id": "sklearn:regression-metrics",
+        "title": "scikit-learn guide: MAE, RMSE and R-squared",
+        "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "regression-metrics"
+        ]
+      },
+      {
+        "id": "sklearn:logistic-regression",
+        "title": "scikit-learn guide: Logistic regression",
+        "url": "https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "logistic-regression"
+        ]
+      },
+      {
+        "id": "sklearn:classification-metrics",
+        "title": "scikit-learn guide: Precision, recall, F1 and ROC",
+        "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "classification-metrics"
+        ]
+      },
+      {
+        "id": "sklearn:knn",
+        "title": "scikit-learn guide: Nearest-neighbor models",
+        "url": "https://scikit-learn.org/stable/modules/neighbors.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "knn"
+        ]
+      },
+      {
+        "id": "sklearn:decision-trees",
+        "title": "scikit-learn guide: Decision trees",
+        "url": "https://scikit-learn.org/stable/modules/tree.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "decision-trees"
+        ]
+      },
+      {
+        "id": "sklearn:cross-validation",
+        "title": "scikit-learn guide: Cross-validation and model selection",
+        "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "cross-validation"
+        ]
+      },
+      {
+        "id": "sklearn:regularization",
+        "title": "scikit-learn guide: Overfitting and regularization",
+        "url": "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "regularization"
+        ]
+      },
+      {
+        "id": "sklearn:ensembles",
+        "title": "scikit-learn guide: Random forests and boosting",
+        "url": "https://scikit-learn.org/stable/modules/ensemble.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "ensembles"
+        ]
+      },
+      {
+        "id": "sklearn:feature-selection",
+        "title": "scikit-learn guide: Feature selection and interpretation",
+        "url": "https://scikit-learn.org/stable/modules/feature_selection.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "feature-selection"
+        ]
+      },
+      {
+        "id": "sklearn:clustering",
+        "title": "scikit-learn guide: Clustering and unsupervised learning",
+        "url": "https://scikit-learn.org/stable/modules/clustering.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "clustering"
+        ]
+      },
+      {
+        "id": "sklearn:pca",
+        "title": "scikit-learn guide: Dimensionality reduction with PCA",
+        "url": "https://scikit-learn.org/stable/modules/decomposition.html#pca",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "pca"
+        ]
+      },
+      {
+        "id": "sklearn:neural-networks",
+        "title": "scikit-learn guide: Neural network foundations",
+        "url": "https://scikit-learn.org/stable/modules/neural_networks_supervised.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "neural-networks"
+        ]
+      },
+      {
+        "id": "sklearn:model-deployment",
+        "title": "scikit-learn guide: Deployment and monitoring",
+        "url": "https://scikit-learn.org/stable/model_persistence.html",
+        "kind": "official_documentation",
+        "concept_ids": [
+          "model-deployment"
+        ]
+      }
+    ]
+  },
+  "assessment_batch_id": "6b456f88b8bd180c79a0eed0",
+  "status": "passed",
+  "elapsed_seconds": 219.4
+}

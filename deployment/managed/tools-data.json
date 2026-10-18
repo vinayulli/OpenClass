@@ -1,0 +1,74 @@
+{
+  "tools": [
+    {
+      "name": "get_learning_twin",
+      "description": "Read a learner's assessed evidence. Teachers can select an enrolled learner within their signed scope.",
+      "inputSchema": {
+        "properties": {
+          "student_id": {
+            "default": "",
+            "title": "Student Id",
+            "type": "string"
+          }
+        },
+        "title": "get_learning_twinArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_course_materials",
+      "description": "Read approved course references; never exam questions or answer keys.",
+      "inputSchema": {
+        "properties": {},
+        "title": "get_course_materialsArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_student_progress",
+      "description": "Read scoped progress, assignment history and released result summaries without raw exam answers.",
+      "inputSchema": {
+        "properties": {
+          "student_id": {
+            "default": "",
+            "title": "Student Id",
+            "type": "string"
+          }
+        },
+        "title": "get_student_progressArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_class_summary",
+      "description": "Return anonymous class aggregates and the current student's own provisional rank only.",
+      "inputSchema": {
+        "properties": {},
+        "title": "get_class_summaryArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_learner_memory",
+      "description": "Retrieve course-scoped long-term learning memories for one authorized learner.",
+      "inputSchema": {
+        "properties": {
+          "query": {
+            "title": "Query",
+            "type": "string"
+          },
+          "student_id": {
+            "default": "",
+            "title": "Student Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "title": "search_learner_memoryArguments",
+        "type": "object"
+      }
+    }
+  ]
+}

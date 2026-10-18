@@ -1,0 +1,259 @@
+{
+  "agent": "intervention",
+  "context": {
+    "course": {
+      "id": "mock-course-python",
+      "name": "Python: concepts to practice",
+      "code": "MOCK-CS201",
+      "description": "Synthetic graduate-level class for architecture reviews and demos.",
+      "org": "mock-academy",
+      "teacher_id": "mock-teacher-01",
+      "students": [
+        "mock-student-01",
+        "mock-student-02",
+        "mock-student-03",
+        "mock-student-04",
+        "mock-student-05",
+        "mock-student-06",
+        "mock-student-07",
+        "mock-student-08",
+        "mock-student-09",
+        "mock-student-10",
+        "mock-student-11",
+        "mock-student-12",
+        "mock-student-13",
+        "mock-student-14",
+        "mock-student-15",
+        "mock-student-16",
+        "mock-student-17",
+        "mock-student-18",
+        "mock-student-19",
+        "mock-student-20",
+        "mock-student-21",
+        "mock-student-22",
+        "mock-student-23",
+        "mock-student-24",
+        "mock-student-25",
+        "mock-student-26",
+        "mock-student-27",
+        "mock-student-28",
+        "mock-student-29",
+        "mock-student-30"
+      ],
+      "objectives": [
+        "Write reusable Python functions",
+        "Apply encapsulation and composition",
+        "Build reliable programs with tests"
+      ],
+      "concepts": [
+        {
+          "id": "functions",
+          "name": "Functions",
+          "prerequisites": []
+        },
+        {
+          "id": "parameters",
+          "name": "Parameters and return values",
+          "prerequisites": [
+            "functions"
+          ]
+        },
+        {
+          "id": "encapsulation",
+          "name": "Encapsulation",
+          "prerequisites": [
+            "functions"
+          ]
+        },
+        {
+          "id": "composition",
+          "name": "Composition",
+          "prerequisites": [
+            "encapsulation"
+          ]
+        },
+        {
+          "id": "testing",
+          "name": "Unit testing",
+          "prerequisites": [
+            "functions",
+            "parameters"
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "id": "mock-material-python",
+          "title": "Approved Python reference",
+          "content": "A function groups reusable behavior. The def keyword defines a function. Parameters receive input and return passes a result to the caller. A function that reaches its end without return produces None. Encapsulation groups data and behavior behind an interface. Composition combines objects to provide behavior. Unit tests compare expected and actual behavior, including boundary cases.",
+          "created_at": "2026-10-18T09:00:00+00:00"
+        }
+      ],
+      "created_at": "2026-10-18T09:00:00+00:00",
+      "synthetic": true
+    },
+    "twin": {
+      "student_id": "mock-student-07",
+      "course_id": "mock-course-python",
+      "concepts": [
+        {
+          "id": "functions",
+          "name": "Functions",
+          "prerequisites": [],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        },
+        {
+          "id": "parameters",
+          "name": "Parameters and return values",
+          "prerequisites": [
+            "functions"
+          ],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        },
+        {
+          "id": "encapsulation",
+          "name": "Encapsulation",
+          "prerequisites": [
+            "functions"
+          ],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        },
+        {
+          "id": "composition",
+          "name": "Composition",
+          "prerequisites": [
+            "encapsulation"
+          ],
+          "mastery": 50,
+          "confidence": 0.67,
+          "evidence_count": 6,
+          "status": "requires review",
+          "evidence": [
+            {
+              "id": "mock-evidence-7-theory-1",
+              "course_id": "mock-course-python",
+              "student_id": "mock-student-07",
+              "concept_id": "composition",
+              "source": "Synthetic theory quiz",
+              "source_id": "mock-theory-1",
+              "score": 1,
+              "kind": "quiz",
+              "confidence": 1,
+              "at": "2026-10-18T09:00:00+00:00",
+              "synthetic": true
+            },
+            {
+              "id": "mock-evidence-7-code-1",
+              "course_id": "mock-course-python",
+              "student_id": "mock-student-07",
+              "concept_id": "composition",
+              "source": "Synthetic teacher-reviewed code exercise",
+              "source_id": "mock-code-1",
+              "score": 0,
+              "kind": "coding",
+              "confidence": 1,
+              "at": "2026-10-18T09:00:00+00:00",
+              "synthetic": true
+            },
+            {
+              "id": "mock-evidence-7-theory-2",
+              "course_id": "mock-course-python",
+              "student_id": "mock-student-07",
+              "concept_id": "composition",
+              "source": "Synthetic theory quiz",
+              "source_id": "mock-theory-2",
+              "score": 1,
+              "kind": "quiz",
+              "confidence": 1,
+              "at": "2026-10-18T09:00:00+00:00",
+              "synthetic": true
+            },
+            {
+              "id": "mock-evidence-7-code-2",
+              "course_id": "mock-course-python",
+              "student_id": "mock-student-07",
+              "concept_id": "composition",
+              "source": "Synthetic teacher-reviewed code exercise",
+              "source_id": "mock-code-2",
+              "score": 0,
+              "kind": "coding",
+              "confidence": 1,
+              "at": "2026-10-18T09:00:00+00:00",
+              "synthetic": true
+            },
+            {
+              "id": "mock-evidence-7-theory-3",
+              "course_id": "mock-course-python",
+              "student_id": "mock-student-07",
+              "concept_id": "composition",
+              "source": "Synthetic theory quiz",
+              "source_id": "mock-theory-3",
+              "score": 1,
+              "kind": "quiz",
+              "confidence": 1,
+              "at": "2026-10-18T09:00:00+00:00",
+              "synthetic": true
+            },
+            {
+              "id": "mock-evidence-7-code-3",
+              "course_id": "mock-course-python",
+              "student_id": "mock-student-07",
+              "concept_id": "composition",
+              "source": "Synthetic teacher-reviewed code exercise",
+              "source_id": "mock-code-3",
+              "score": 0,
+              "kind": "coding",
+              "confidence": 1,
+              "at": "2026-10-18T09:00:00+00:00",
+              "synthetic": true
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "name": "Unit testing",
+          "prerequisites": [
+            "functions",
+            "parameters"
+          ],
+          "mastery": null,
+          "confidence": 0,
+          "evidence_count": 0,
+          "status": "insufficient evidence",
+          "evidence": []
+        }
+      ],
+      "mastery": 50,
+      "evidence_count": 6,
+      "coverage": 20,
+      "pace": "Not enough timed history",
+      "method": "Confidence-weighted evidence average; confidence reflects coverage, not calibrated probability."
+    }
+  },
+  "example_output": {
+    "title": "Apply composition in a small program",
+    "concept_id": "composition",
+    "rationale": "Synthetic theory evidence mock-evidence-7-theory-1 scores 1.0 while reviewed coding evidence mock-evidence-7-code-1 scores 0.0. This suggests a possible theory-to-practice gap requiring review.",
+    "lesson": "Composition combines objects. Let a Library object hold a Catalog object and delegate lookups to it.",
+    "exercise": "Implement a Library that receives a Catalog object and uses its lookup method. Write a test using a small fake Catalog.",
+    "success_criteria": "In a new educator-reviewed exercise, demonstrate delegation and explain why the relationship uses composition. Compare new evidence with the baseline."
+  },
+  "review_criteria": [
+    "Cite evidence IDs",
+    "Describe a possible gap rather than certainty",
+    "Require educator approval",
+    "Measure new assessed performance"
+  ]
+}

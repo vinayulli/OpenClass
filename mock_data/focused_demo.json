@@ -1,0 +1,165 @@
+{
+  "description": "Ten synthetic learners for the default demo classroom. Handwritten evidence, learning paths and feedback, not Gemini outputs.",
+  "students": [
+    {
+      "student_id": "student-1",
+      "name": "Jamie Chen",
+      "concept_scores": {
+        "functions": 83,
+        "parameters": 83,
+        "encapsulation": 45,
+        "composition": 50,
+        "testing": 40
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "I need smaller examples before exercises."
+      }
+    },
+    {
+      "student_id": "student-2",
+      "name": "Aarav Patel",
+      "concept_scores": {
+        "functions": 83,
+        "parameters": 83,
+        "encapsulation": 30,
+        "composition": 50,
+        "testing": 38
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_hard",
+        "comment": "Encapsulation is still confusing; please include diagrams or analogies."
+      }
+    },
+    {
+      "student_id": "student-3",
+      "name": "Maya Williams",
+      "concept_scores": {
+        "functions": 90,
+        "parameters": 80,
+        "encapsulation": 75,
+        "composition": 70,
+        "testing": 60
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "I would like more real-world practice."
+      }
+    },
+    {
+      "student_id": "student-4",
+      "name": "Sofia Garcia",
+      "concept_scores": {
+        "functions": 70,
+        "parameters": 65,
+        "encapsulation": 50,
+        "composition": 40,
+        "testing": 60
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_hard",
+        "comment": "Composition exercises feel too difficult."
+      }
+    },
+    {
+      "student_id": "student-5",
+      "name": "Noah Kim",
+      "concept_scores": {
+        "functions": 95,
+        "parameters": 90,
+        "encapsulation": 80,
+        "composition": 75,
+        "testing": 70
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_easy",
+        "comment": "I am ready for harder practice."
+      }
+    },
+    {
+      "student_id": "student-6",
+      "name": "Isha Rao",
+      "concept_scores": {
+        "functions": 65,
+        "parameters": 60,
+        "encapsulation": 30,
+        "composition": 35,
+        "testing": 45
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_hard",
+        "comment": "Please slow down and add hints."
+      }
+    },
+    {
+      "student_id": "student-7",
+      "name": "Liam Brown",
+      "concept_scores": {
+        "functions": 80,
+        "parameters": 75,
+        "encapsulation": 60,
+        "composition": 55,
+        "testing": 50
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "I prefer building a small project."
+      }
+    },
+    {
+      "student_id": "student-8",
+      "name": "Emma Wilson",
+      "concept_scores": {
+        "functions": 60,
+        "parameters": 55,
+        "encapsulation": 45,
+        "composition": 40,
+        "testing": 35
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_hard",
+        "comment": "Shorter daily sessions help me focus."
+      }
+    },
+    {
+      "student_id": "student-9",
+      "name": "Olivia Davis",
+      "concept_scores": {
+        "functions": 90,
+        "parameters": 85,
+        "encapsulation": 80,
+        "composition": 70,
+        "testing": 65
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_easy",
+        "comment": "Please include more testing challenges."
+      }
+    },
+    {
+      "student_id": "student-10",
+      "name": "Ethan Miller",
+      "concept_scores": {
+        "functions": 75,
+        "parameters": 70,
+        "encapsulation": 55,
+        "composition": 50,
+        "testing": 60
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "A worked example followed by a quiz helps me."
+      }
+    }
+  ]
+}

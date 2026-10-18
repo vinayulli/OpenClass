@@ -1,0 +1,31 @@
+services:
+  data:
+    build:
+      context: ..
+      dockerfile: mcp_servers/data/Dockerfile
+    ports: ["127.0.0.1:8001:8080"]
+    environment:
+      OPENCLASS_GOVERNANCE_MODE: local
+      MCP_CONTEXT_SECRET: ${MCP_CONTEXT_SECRET:?Set a random local MCP context secret}
+      MCP_ALLOWED_HOSTS: "localhost:*,127.0.0.1:*,host.docker.internal:*"
+      DB_HOST: host.docker.internal
+      DB_PORT: ${DB_PORT:-5433}
+      DB_NAME: ${DB_NAME:-openclass}
+      DB_USER: ${DB_USER:-openclass}
+      DB_PASSWORD: ${DB_PASSWORD:?Set the database password locally}
+      GOOGLE_CLOUD_PROJECT: ${GOOGLE_CLOUD_PROJECT:-hackathon-506016}
+      GOOGLE_CLOUD_LOCATION: ${GOOGLE_CLOUD_LOCATION:-us-central1}
+      GEAP_MEMORY_ENABLED: "false"
+      MODEL_ARMOR_ENABLED: "false"
+  github:
+    build:
+      context: ..
+      dockerfile: mcp_servers/github/Dockerfile
+    ports: ["127.0.0.1:8002:8080"]
+    environment:
+      OPENCLASS_GOVERNANCE_MODE: local
+      MCP_CONTEXT_SECRET: ${MCP_CONTEXT_SECRET:?Set a random local MCP context secret}
+      MCP_ALLOWED_HOSTS: "localhost:*,127.0.0.1:*"
+      GITHUB_UPSTREAM_MCP_URL: https://api.githubcopilot.com/mcp/
+      GITHUB_PERSONAL_ACCESS_TOKEN: ${GITHUB_PERSONAL_ACCESS_TOKEN:?Set a read-only GitHub token locally}
+      MODEL_ARMOR_ENABLED: "false"

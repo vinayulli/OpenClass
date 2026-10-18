@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "provider": "Illustrative GEAP response; not written to Memory Bank",
+  "scope_inputs": {
+    "organization_id": "mock-academy",
+    "course_id": "mock-course-python",
+    "student_id": "mock-student-07"
+  },
+  "facts": [
+    "Source mock-theory-1: composition theory score 1.0.",
+    "Source mock-code-1: composition coding score 0.0 in a teacher-reviewed synthetic exercise."
+  ],
+  "sync_examples": [
+    {
+      "source_id": "mock-code-1",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "source_id": "mock-theory-1",
+      "status": "synced",
+      "attempts": 1
+    }
+  ],
+  "note": "Memory facts are context, not authoritative grades or a calibrated diagnosis."
+}

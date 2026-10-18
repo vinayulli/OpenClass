@@ -1,0 +1,10 @@
+name: openclass-content-protection
+target:
+  resources:
+    - projects/PROJECT_ID/locations/REGION/agentGateways/openclass-egress
+policyProfile: CONTENT_AUTHZ
+action: CUSTOM
+customProvider:
+  authzExtension:
+    resources:
+      - projects/PROJECT_ID/locations/REGION/authzExtensions/openclass-model-armor

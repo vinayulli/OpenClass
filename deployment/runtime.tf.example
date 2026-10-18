@@ -1,0 +1,22 @@
+# Merge into a reviewed Terraform project with google-beta configured.
+# The image must expose the Agent Runtime/ADK HTTP contract. The API Dockerfile
+# is a plain FastAPI service and must not be substituted for an ADK runtime image.
+resource "google_vertex_ai_reasoning_engine" "openclass" {
+  provider     = google-beta
+  project      = var.project_id
+  region       = var.region
+  display_name = "openclass-agents"
+  spec {
+    identity_type = "AGENT_IDENTITY"
+    container_spec {
+      image_uri = var.adk_runtime_image
+    }
+    deployment_spec {
+      agent_gateway_config {
+        agent_to_anywhere_config {
+          agent_gateway = var.agent_gateway_resource
+        }
+      }
+    }
+  }
+}

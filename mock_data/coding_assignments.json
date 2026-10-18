@@ -1,0 +1,15 @@
+[
+  {
+    "id": "mock-coding-assignment",
+    "course_id": "mock-course-python",
+    "title": "Library composition exercise",
+    "instructions": "Implement a Library that accepts a Catalog object, delegates title lookup and includes unit tests. Submit a public GitHub repository; explain how composition differs from inheritance.",
+    "concept_ids": [
+      "composition",
+      "testing"
+    ],
+    "student_ids": [],
+    "created_at": "2026-10-18T09:00:00+00:00",
+    "synthetic": true
+  }
+]

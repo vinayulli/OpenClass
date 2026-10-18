@@ -1,0 +1,639 @@
+{
+  "version": 1,
+  "course": {
+    "id": "machine-learning",
+    "org": "demo",
+    "teacher_id": "teacher-demo",
+    "name": "Machine Learning: from data to decisions",
+    "code": "ML 201",
+    "description": "Build, evaluate and explain reliable machine-learning models. Fourteen of twenty syllabus topics have been taught.",
+    "color": "violet",
+    "objectives": [
+      "Frame supervised learning problems and audit dataset quality",
+      "Build reproducible preprocessing and supervised learning pipelines",
+      "Choose evaluation metrics and validation strategies without leakage",
+      "Explain model complexity, uncertainty and evidence-based next steps"
+    ],
+    "students": [
+      "student-1",
+      "student-2",
+      "student-3",
+      "student-4",
+      "student-5",
+      "student-6",
+      "student-7",
+      "student-8",
+      "student-9",
+      "student-10"
+    ],
+    "concepts": [
+      {
+        "id": "ml-workflow",
+        "name": "ML workflow and problem framing",
+        "prerequisites": [],
+        "teaching_status": "taught",
+        "syllabus_order": 1
+      },
+      {
+        "id": "data-quality",
+        "name": "Data quality and missing values",
+        "prerequisites": [
+          "ml-workflow"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 2
+      },
+      {
+        "id": "descriptive-statistics",
+        "name": "Exploratory statistics",
+        "prerequisites": [
+          "data-quality"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 3
+      },
+      {
+        "id": "probability",
+        "name": "Probability and uncertainty",
+        "prerequisites": [
+          "descriptive-statistics"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 4
+      },
+      {
+        "id": "train-test-split",
+        "name": "Train / validation / test splits",
+        "prerequisites": [
+          "ml-workflow"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 5
+      },
+      {
+        "id": "preprocessing",
+        "name": "Scaling, encoding and leakage",
+        "prerequisites": [
+          "data-quality",
+          "train-test-split"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 6
+      },
+      {
+        "id": "linear-regression",
+        "name": "Linear regression",
+        "prerequisites": [
+          "descriptive-statistics",
+          "preprocessing"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 7
+      },
+      {
+        "id": "regression-metrics",
+        "name": "MAE, RMSE and R-squared",
+        "prerequisites": [
+          "linear-regression"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 8
+      },
+      {
+        "id": "logistic-regression",
+        "name": "Logistic regression",
+        "prerequisites": [
+          "probability",
+          "preprocessing"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 9
+      },
+      {
+        "id": "classification-metrics",
+        "name": "Precision, recall, F1 and ROC",
+        "prerequisites": [
+          "logistic-regression"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 10
+      },
+      {
+        "id": "knn",
+        "name": "Nearest-neighbor models",
+        "prerequisites": [
+          "preprocessing"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 11
+      },
+      {
+        "id": "decision-trees",
+        "name": "Decision trees",
+        "prerequisites": [
+          "ml-workflow"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 12
+      },
+      {
+        "id": "cross-validation",
+        "name": "Cross-validation and model selection",
+        "prerequisites": [
+          "train-test-split",
+          "regression-metrics",
+          "classification-metrics"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 13
+      },
+      {
+        "id": "regularization",
+        "name": "Overfitting and regularization",
+        "prerequisites": [
+          "linear-regression",
+          "cross-validation"
+        ],
+        "teaching_status": "taught",
+        "syllabus_order": 14
+      },
+      {
+        "id": "ensembles",
+        "name": "Random forests and boosting",
+        "prerequisites": [
+          "decision-trees"
+        ],
+        "teaching_status": "planned",
+        "syllabus_order": 15
+      },
+      {
+        "id": "feature-selection",
+        "name": "Feature selection and interpretation",
+        "prerequisites": [
+          "cross-validation"
+        ],
+        "teaching_status": "planned",
+        "syllabus_order": 16
+      },
+      {
+        "id": "clustering",
+        "name": "Clustering and unsupervised learning",
+        "prerequisites": [
+          "preprocessing"
+        ],
+        "teaching_status": "planned",
+        "syllabus_order": 17
+      },
+      {
+        "id": "pca",
+        "name": "Dimensionality reduction with PCA",
+        "prerequisites": [
+          "preprocessing"
+        ],
+        "teaching_status": "planned",
+        "syllabus_order": 18
+      },
+      {
+        "id": "neural-networks",
+        "name": "Neural network foundations",
+        "prerequisites": [
+          "regularization"
+        ],
+        "teaching_status": "planned",
+        "syllabus_order": 19
+      },
+      {
+        "id": "model-deployment",
+        "name": "Deployment and monitoring",
+        "prerequisites": [
+          "cross-validation"
+        ],
+        "teaching_status": "planned",
+        "syllabus_order": 20
+      }
+    ],
+    "materials": [
+      {
+        "id": "ml-reference-ml-workflow",
+        "title": "ML workflow and problem framing - class reference",
+        "content": "Frame a prediction problem by identifying the target, feature availability, unit of observation and evaluation objective. Separate supervised classification and regression from unsupervised exploration. A baseline must precede tuning; choose a metric tied to the actual decision.",
+        "concept_ids": [
+          "ml-workflow"
+        ]
+      },
+      {
+        "id": "ml-reference-data-quality",
+        "title": "Data quality and missing values - class reference",
+        "content": "Inspect schema, missingness, duplicate entities and class balance before modeling. Missing values can have meaning; fit imputation only on the training fold. Dropping rows indiscriminately can change the target population. Record data-quality assumptions.",
+        "concept_ids": [
+          "data-quality"
+        ]
+      },
+      {
+        "id": "ml-reference-descriptive-statistics",
+        "title": "Exploratory statistics - class reference",
+        "content": "Summarize numerical features with distributions, medians, quantiles and spread. Inspect outliers and groups; correlation alone does not establish causality. Compare distributions across train and test partitions without fitting transformations on held-out data.",
+        "concept_ids": [
+          "descriptive-statistics"
+        ]
+      },
+      {
+        "id": "ml-reference-probability",
+        "title": "Probability and uncertainty - class reference",
+        "content": "Conditional probability expresses an event under observed information. Base rates affect interpretation of classifier outputs. Separate a model score from a calibrated probability and distinguish uncertainty caused by small samples from an observed model failure.",
+        "concept_ids": [
+          "probability"
+        ]
+      },
+      {
+        "id": "ml-reference-train-test-split",
+        "title": "Train / validation / test splits - class reference",
+        "content": "Keep the test set untouched until final evaluation. Use validation data or cross-validation for model and hyperparameter selection. Stratify suitable classification splits; preserve time order for forecasting and keep repeated entities in a single partition.",
+        "concept_ids": [
+          "train-test-split"
+        ]
+      },
+      {
+        "id": "ml-reference-preprocessing",
+        "title": "Scaling, encoding and leakage - class reference",
+        "content": "Fit scalers, imputers and encoders only on training data. Apply the fitted transformation to held-out data using a pipeline. Leakage happens when information unavailable at prediction time influences training or validation, including preprocessing before splitting.",
+        "concept_ids": [
+          "preprocessing"
+        ]
+      },
+      {
+        "id": "ml-reference-linear-regression",
+        "title": "Linear regression - class reference",
+        "content": "Linear regression predicts a continuous target using a weighted combination of features. Compare against a mean baseline, inspect residuals, and check whether relationships and evaluation assumptions are appropriate. Coefficients do not prove causal effects.",
+        "concept_ids": [
+          "linear-regression"
+        ]
+      },
+      {
+        "id": "ml-reference-regression-metrics",
+        "title": "MAE, RMSE and R-squared - class reference",
+        "content": "MAE uses absolute residuals in target units; RMSE penalizes large residuals more strongly. R-squared compares residual error to a constant baseline and can be negative. Compare metrics on the same held-out data and avoid selecting a model using training error.",
+        "concept_ids": [
+          "regression-metrics"
+        ]
+      },
+      {
+        "id": "ml-reference-logistic-regression",
+        "title": "Logistic regression - class reference",
+        "content": "Logistic regression models a binary outcome with a linear decision function and a sigmoid mapping. The decision threshold converts scores into class labels. Feature scaling and regularization affect fitting; probabilities should be checked for calibration when needed.",
+        "concept_ids": [
+          "logistic-regression"
+        ]
+      },
+      {
+        "id": "ml-reference-classification-metrics",
+        "title": "Precision, recall, F1 and ROC - class reference",
+        "content": "Compute precision as TP/(TP+FP), recall as TP/(TP+FN), and F1 as their harmonic mean. Choose metrics for error costs and class balance. Accuracy can hide failure on a rare class. Threshold changes alter precision and recall; ROC-AUC is not accuracy.",
+        "concept_ids": [
+          "classification-metrics"
+        ]
+      },
+      {
+        "id": "ml-reference-knn",
+        "title": "Nearest-neighbor models - class reference",
+        "content": "K-nearest neighbors predicts from nearby training examples. Distance depends on feature scale, so fit preprocessing within training folds. Choose k using validation; small k can overfit and larger k smooths predictions. Training data and distance choice affect inference cost.",
+        "concept_ids": [
+          "knn"
+        ]
+      },
+      {
+        "id": "ml-reference-decision-trees",
+        "title": "Decision trees - class reference",
+        "content": "Decision trees partition feature space with rules chosen to improve an objective. Deep trees can fit noise. Control complexity with depth, leaf size or pruning and evaluate on held-out data. Feature importance alone is not causal evidence.",
+        "concept_ids": [
+          "decision-trees"
+        ]
+      },
+      {
+        "id": "ml-reference-cross-validation",
+        "title": "Cross-validation and model selection - class reference",
+        "content": "Cross-validation repeats training and validation on distinct folds to estimate generalization. Fit the complete pipeline within each fold. Use stratification, groups or time-aware splitting as appropriate. Keep a final test set separate from model selection and report variability.",
+        "concept_ids": [
+          "cross-validation"
+        ]
+      },
+      {
+        "id": "ml-reference-regularization",
+        "title": "Overfitting and regularization - class reference",
+        "content": "Regularization penalizes model complexity to reduce overfitting. Ridge uses L2 and lasso uses L1 penalties; scale numerical features appropriately. Choose penalty strength using cross-validation rather than the final test set. Compare training and validation behavior.",
+        "concept_ids": [
+          "regularization"
+        ]
+      }
+    ],
+    "syllabus_progress": {
+      "total_topics": 20,
+      "taught_topics": 14,
+      "percent_complete": 70,
+      "note": "Teaching coverage, not student mastery. Remaining topics are planned, not learning gaps."
+    },
+    "synthetic": true
+  },
+  "learners": [
+    {
+      "student_id": "student-1",
+      "name": "Jamie Chen",
+      "profile": {
+        "headline": "Strong implementation; needs evaluation discipline",
+        "observations": "Builds working notebooks but sometimes tunes against the test set.",
+        "preferred_practice": "guided examples"
+      },
+      "scores": {
+        "ml-workflow": 85,
+        "data-quality": 80,
+        "descriptive-statistics": 75,
+        "probability": 70,
+        "train-test-split": 52,
+        "preprocessing": 48,
+        "linear-regression": 82,
+        "regression-metrics": 65,
+        "logistic-regression": 78,
+        "classification-metrics": 55,
+        "knn": 75,
+        "decision-trees": 80,
+        "cross-validation": 45,
+        "regularization": 50
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "Show a small leakage example and a checklist I can use before submitting."
+      }
+    },
+    {
+      "student_id": "student-2",
+      "name": "Aarav Patel",
+      "profile": {
+        "headline": "Strong statistics; developing implementation confidence",
+        "observations": "Explains distributions well; needs practice assembling reproducible pipelines.",
+        "preferred_practice": "independent notebook"
+      },
+      "scores": {
+        "ml-workflow": 80,
+        "data-quality": 75,
+        "descriptive-statistics": 92,
+        "probability": 90,
+        "train-test-split": 70,
+        "preprocessing": 48,
+        "linear-regression": 62,
+        "regression-metrics": 78,
+        "logistic-regression": 65,
+        "classification-metrics": 72,
+        "knn": 55,
+        "decision-trees": 65,
+        "cross-validation": 58,
+        "regularization": 50
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_hard",
+        "comment": "Please give step-by-step pipeline examples before an independent task."
+      }
+    },
+    {
+      "student_id": "student-3",
+      "name": "Maya Williams",
+      "profile": {
+        "headline": "Consistent, balanced progress",
+        "observations": "Uses baselines reliably and is ready for deeper diagnostic exercises.",
+        "preferred_practice": "numerical exercises"
+      },
+      "scores": {
+        "ml-workflow": 82,
+        "data-quality": 80,
+        "descriptive-statistics": 78,
+        "probability": 76,
+        "train-test-split": 85,
+        "preprocessing": 82,
+        "linear-regression": 80,
+        "regression-metrics": 84,
+        "logistic-regression": 78,
+        "classification-metrics": 82,
+        "knn": 75,
+        "decision-trees": 78,
+        "cross-validation": 80,
+        "regularization": 72
+      },
+      "feedback": {
+        "helpfulness": "helpful",
+        "difficulty": "right_level",
+        "comment": "Give me an error-analysis challenge using a realistic dataset."
+      }
+    },
+    {
+      "student_id": "student-4",
+      "name": "Sofia Garcia",
+      "profile": {
+        "headline": "Clear communicator; needs quantitative metric practice",
+        "observations": "Explains model purpose clearly but mixes precision and recall in calculations.",
+        "preferred_practice": "experiment comparison"
+      },
+      "scores": {
+        "ml-workflow": 80,
+        "data-quality": 72,
+        "descriptive-statistics": 65,
+        "probability": 60,
+        "train-test-split": 72,
+        "preprocessing": 68,
+        "linear-regression": 68,
+        "regression-metrics": 50,
+        "logistic-regression": 62,
+        "classification-metrics": 38,
+        "knn": 60,
+        "decision-trees": 68,
+        "cross-validation": 50,
+        "regularization": 45
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "Confusion-matrix examples with actual numbers would help."
+      }
+    },
+    {
+      "student_id": "student-5",
+      "name": "Noah Kim",
+      "profile": {
+        "headline": "Advanced applied understanding",
+        "observations": "Strong across covered topics; benefits from challenging validation cases.",
+        "preferred_practice": "guided examples"
+      },
+      "scores": {
+        "ml-workflow": 95,
+        "data-quality": 90,
+        "descriptive-statistics": 92,
+        "probability": 90,
+        "train-test-split": 94,
+        "preprocessing": 90,
+        "linear-regression": 92,
+        "regression-metrics": 92,
+        "logistic-regression": 90,
+        "classification-metrics": 93,
+        "knn": 88,
+        "decision-trees": 92,
+        "cross-validation": 90,
+        "regularization": 88
+      },
+      "feedback": {
+        "helpfulness": "helpful",
+        "difficulty": "too_easy",
+        "comment": "Please challenge me with grouped-data splits and tricky leakage cases."
+      }
+    },
+    {
+      "student_id": "student-6",
+      "name": "Isha Rao",
+      "profile": {
+        "headline": "Improving foundations",
+        "observations": "Recent observations improve; needs shorter tasks connecting statistics to models.",
+        "preferred_practice": "independent notebook"
+      },
+      "scores": {
+        "ml-workflow": 62,
+        "data-quality": 58,
+        "descriptive-statistics": 55,
+        "probability": 48,
+        "train-test-split": 60,
+        "preprocessing": 55,
+        "linear-regression": 52,
+        "regression-metrics": 50,
+        "logistic-regression": 45,
+        "classification-metrics": 42,
+        "knn": 48,
+        "decision-trees": 55,
+        "cross-validation": 45,
+        "regularization": 40
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_hard",
+        "comment": "Keep each activity short and include a hint before the answer."
+      }
+    },
+    {
+      "student_id": "student-7",
+      "name": "Liam Brown",
+      "profile": {
+        "headline": "Practical intuition; incomplete assessment coverage",
+        "observations": "Builds sensible models but has fewer observations for later taught topics.",
+        "preferred_practice": "numerical exercises"
+      },
+      "scores": {
+        "ml-workflow": 78,
+        "data-quality": 75,
+        "descriptive-statistics": 70,
+        "probability": 65,
+        "train-test-split": 80,
+        "preprocessing": 72,
+        "linear-regression": 75,
+        "regression-metrics": 68,
+        "logistic-regression": 70,
+        "classification-metrics": 62,
+        "knn": null,
+        "decision-trees": null,
+        "cross-validation": null,
+        "regularization": null
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "Start with a diagnostic on topics where I have not submitted evidence."
+      }
+    },
+    {
+      "student_id": "student-8",
+      "name": "Emma Wilson",
+      "profile": {
+        "headline": "Strong collaboration and explanations",
+        "observations": "Communicates findings well; needs more independent reproducible experiments.",
+        "preferred_practice": "experiment comparison"
+      },
+      "scores": {
+        "ml-workflow": 82,
+        "data-quality": 80,
+        "descriptive-statistics": 76,
+        "probability": 72,
+        "train-test-split": 78,
+        "preprocessing": 65,
+        "linear-regression": 70,
+        "regression-metrics": 75,
+        "logistic-regression": 68,
+        "classification-metrics": 72,
+        "knn": 58,
+        "decision-trees": 70,
+        "cross-validation": 65,
+        "regularization": 60
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "right_level",
+        "comment": "I would like a small experiment I can run and explain to my teacher."
+      }
+    },
+    {
+      "student_id": "student-9",
+      "name": "Olivia Davis",
+      "profile": {
+        "headline": "Strong evaluation; selective implementation gaps",
+        "observations": "Chooses metrics well; needs practice with nearest-neighbor preprocessing.",
+        "preferred_practice": "guided examples"
+      },
+      "scores": {
+        "ml-workflow": 88,
+        "data-quality": 82,
+        "descriptive-statistics": 85,
+        "probability": 80,
+        "train-test-split": 90,
+        "preprocessing": 62,
+        "linear-regression": 84,
+        "regression-metrics": 90,
+        "logistic-regression": 80,
+        "classification-metrics": 88,
+        "knn": 45,
+        "decision-trees": 75,
+        "cross-validation": 85,
+        "regularization": 78
+      },
+      "feedback": {
+        "helpfulness": "helpful",
+        "difficulty": "right_level",
+        "comment": "Compare the same model before and after scaling."
+      }
+    },
+    {
+      "student_id": "student-10",
+      "name": "Ethan Miller",
+      "profile": {
+        "headline": "Recently joined; limited evidence on later topics",
+        "observations": "Has evidence for the first eight topics; later taught topics need diagnostics.",
+        "preferred_practice": "independent notebook"
+      },
+      "scores": {
+        "ml-workflow": 70,
+        "data-quality": 65,
+        "descriptive-statistics": 62,
+        "probability": 55,
+        "train-test-split": 58,
+        "preprocessing": 52,
+        "linear-regression": 55,
+        "regression-metrics": 48,
+        "logistic-regression": null,
+        "classification-metrics": null,
+        "knn": null,
+        "decision-trees": null,
+        "cross-validation": null,
+        "regularization": null
+      },
+      "feedback": {
+        "helpfulness": "partly_helpful",
+        "difficulty": "too_hard",
+        "comment": "Help me catch up on classification without assuming I already know it."
+      }
+    }
+  ]
+}

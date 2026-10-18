@@ -1,0 +1,14 @@
+{
+  "project_id": "hackathon-506016",
+  "region": "us-central1",
+  "region_status": "proposed default; not independently approved or verified for resource availability",
+  "resource_prefix": "openclass",
+  "memory_bank_display_name": "OpenClass learner memories",
+  "model_armor_template_id": "openclass",
+  "agent_gateway_id": "openclass-egress",
+  "artifact_repository": "openclass",
+  "mcp_service": "openclass-mcp",
+  "postgres_instance": "openclass-postgres",
+  "postgres_connection_name": "hackathon-506016:us-central1:openclass-postgres",
+  "apply_status": "not applied; authenticated GCP access unavailable"
+}
