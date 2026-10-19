@@ -8,7 +8,23 @@ Built for **Google AI Builder Cup 2026** by **Team OpenClass**.
 
 **Application: [Open OpenClass](https://openclass-jdi6nfaqza-uc.a.run.app)**
 
-Use the teacher or student demo credentials provided separately by the team. The hosted demo contains synthetic classroom records.
+The hosted demo contains synthetic classroom records. Use the following accounts to explore the teacher and student portals. **All accounts below use the password `OpenClass123!`.**
+
+| Role | Demo user | Email / login |
+| --- | --- | --- |
+| Teacher | Alex Morgan | `teacher@openclass.demo` |
+| Student | Jamie Chen | `student@openclass.demo` |
+| Student | Aarav Patel | `student2@openclass.demo` |
+| Student | Maya Williams | `student3@openclass.demo` |
+| Student | Sofia Garcia | `student4@openclass.demo` |
+| Student | Noah Kim | `student5@openclass.demo` |
+| Student | Isha Rao | `student6@openclass.demo` |
+| Student | Liam Brown | `student7@openclass.demo` |
+| Student | Emma Wilson | `student8@openclass.demo` |
+| Student | Olivia Davis | `student9@openclass.demo` |
+| Student | Ethan Miller | `student10@openclass.demo` |
+
+Start with the teacher account to review classroom evidence and assign an assessment, then sign out and use the assigned student's account to complete it. Each student account has its own learning evidence, conversations and private practice.
 
 The classroom is **Machine Learning: from data to decisions (ML 201)**: ten learners with different strengths, evidence gaps and feedback, twenty syllabus topics, and fourteen topics taught (**70% teaching coverage**). Teaching coverage and student mastery are separate measures. See [Machine Learning demo data](mock_data/MACHINE_LEARNING.md).
 
